@@ -10,7 +10,7 @@ def grouplabelencode_loop(data, mapping, encoding, nacode=None):
 
             j = encoding[idx]
 
-            if isinstance(c, str):
+            if isinstance(c, (str, int, float)):
                 if label == c:
                     enc = j
                     break
