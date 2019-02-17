@@ -24,7 +24,7 @@ def grouplabelencode_loop(data, mapping, encoding, nacode=None):
     return out
 
 
-def grouplabelencode(data, mapping, nastate=False):
+def grouplabelencode(data, mapping, nacode=None, nastate=False):
     """Encode data array with grouped labels
 
     Parameters:
@@ -37,17 +37,18 @@ def grouplabelencode(data, mapping, nastate=False):
         Each element is a single label (str) or list
         of labels that are mapped to the encoding.
 
+    nacode : integer
+        (Default: None) Encoding for unmapped states.
+
     nastate : bool
-        If False (Default) unmatched data labels are
-        encoded as None. If nastate=True then unmatched
-        data labels are encoded with the integer
-        nacode=len(mapping).
+        If False (Default) unmatched data labels are encoded as nacode.
+        If nastate=True (and nacode=None) then unmatched data labels are
+        encoded with the integer nacode=len(mapping).
     """
     # What value is used for missing data?
     if nastate:
-        nacode = len(mapping)
-    else:
-        nacode = None
+        if nacode is None:
+            nacode = len(mapping)
 
     # Process depending on the data type of the data mapping variable
     if isinstance(mapping, list):
