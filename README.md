@@ -21,7 +21,7 @@ pip install grouplabelencode
 
 
 ## Usage
-Check the [examples](examples) folder for notebooks.
+Check the [examples](http://github.com/kmedian/grouplabelencode/examples) folder for notebooks.
 
 
 ## Commands
