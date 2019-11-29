@@ -7,7 +7,7 @@ def read(fname):
 
 
 setup(name='grouplabelencode',
-      version='0.1.4',
+      version='0.2.0',
       description='Encode grouped labels',
       long_description=read('README.md'),
       long_description_content_type='text/markdown',

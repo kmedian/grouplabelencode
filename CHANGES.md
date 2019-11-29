@@ -1,3 +1,8 @@
+# 0.2.0 / 2019-11-29
+
+  * speed up the code. 
+  * number of function calls reduced to a 1/3
+
 # 0.1.4 / 2019-11-29
 
   * add type hints to functions

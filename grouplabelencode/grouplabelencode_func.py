@@ -2,27 +2,14 @@
 
 def grouplabelencode_loop(data: list, mapping: list, encoding: list,
                           nacode: int = None) -> list:
-    out = list()
-
+    out = []
     for label in data:
-
         enc = nacode
-
         for idx, c in enumerate(mapping):
-
-            j = encoding[idx]
-
-            if isinstance(c, (str, int, float)):
-                if label == c:
-                    enc = j
-                    break
-            else:  # list
-                if label in c:
-                    enc = j
-                    break
-
+            if label in c:
+                enc = encoding[idx]
+                break
         out.append(enc)
-
     return out
 
 
@@ -56,12 +43,15 @@ def grouplabelencode(data: list, mapping: dict, nacode: int = None,
     # Process depending on the data type of the data mapping variable
     if isinstance(mapping, list):
         m = mapping
-        e = range(len(mapping))
+        e = list(range(len(mapping)))
     elif isinstance(mapping, dict):
         m = list(mapping.values())
         e = list(mapping.keys())
     else:
         raise Exception("'data' must be list-of-list or dict.")
+
+    # Convert scalar elements into a list
+    m = [[c] if isinstance(c, (str, int, float)) else c for c in m]
 
     # Loop over 'data' array
     return grouplabelencode_loop(data, m, e, nacode=nacode)
