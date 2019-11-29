@@ -1,5 +1,7 @@
 
-def grouplabelencode_loop(data, mapping, encoding, nacode=None):
+
+def grouplabelencode_loop(data: list, mapping: list, encoding: list,
+                          nacode: int = None) -> list:
     out = list()
 
     for label in data:
@@ -24,7 +26,8 @@ def grouplabelencode_loop(data, mapping, encoding, nacode=None):
     return out
 
 
-def grouplabelencode(data, mapping, nacode=None, nastate=False):
+def grouplabelencode(data: list, mapping: dict, nacode: int = None,
+                     nastate: bool = False) -> list:
     """Encode data array with grouped labels
 
     Parameters:

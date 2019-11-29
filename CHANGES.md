@@ -1,3 +1,7 @@
+# 0.1.4 / 2019-11-29
+
+  * add type hints to functions
+
 # 0.1.3 / 2019-11-29
 
   * Line Profiler removed from deps
