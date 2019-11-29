@@ -19,7 +19,7 @@ jobs:
         pip install -r requirements.txt
     - name: Lint with flake8
       run: |
-        flake8 --ignore=F401 --exclude=$(grep -v '^#' .gitignore | xargs | sed -e 's/ /,/g')
+        flake8 --ignore=F401
     - name: Test with unittest
       run: |
         python -W ignore -m unittest discover
