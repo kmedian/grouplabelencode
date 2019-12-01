@@ -17,7 +17,6 @@ setup(name='grouplabelencode',
       license='MIT',
       packages=['grouplabelencode'],
       install_requires=[
-          'setuptools>=40.0.0',
-          'nose>=1.3.7'],
+          'setuptools>=40.0.0'],
       python_requires='>=3.6',
       zip_safe=False)
