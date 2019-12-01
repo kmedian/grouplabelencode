@@ -26,7 +26,7 @@ pip install grouplabelencode
 ```
 from grouplabelencode import grouplabelencode
 data = ['a', 'b', 3, 3, 'b', 'b', 'e', 'z', 'd', 'a', 'unknown']  # raw data
-groups = [['a', 'b', 3], ['d', 'e']]  # mapping for 3 groups
+groups = [['a', 'b', 3], ['d', 'e']]  # mapping for 2 groups
 encoded = grouplabelencode(data, groups, nastate=True)
 print(encoded)
 # [0, 0, 0, 0, 0, 0, 1, 2, 1, 0, 2]  # 2: NA state
